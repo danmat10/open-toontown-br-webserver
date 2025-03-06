@@ -1,8 +1,8 @@
 const express = require('express');
-const astronController = require('../controllers/astronController');
-const authMiddleware = require('../middlewares/authMiddleware');
-
+const controllers = require('../controllers');
 const router = express.Router();
+
+const astronController = controllers.getController('astron');
 
 // Rotas públicas
 router.get('/account', astronController.getAstronAccount);
