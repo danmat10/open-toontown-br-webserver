@@ -32,6 +32,7 @@ exports.login = async (req, res) => {
         const token = generateToken(user._id);
         res.json({ token });
     } catch (err) {
+        console.log(err);
         res.status(500).json({ error: 'Erro ao fazer login' });
     }
 };
@@ -47,8 +48,8 @@ exports.validateToken = async (req, res) => {
     try {
         // Verifica e decodifica o token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
         // Busca o usuário no banco de dados
+        console.log(decoded);
         const user = await User.findById(decoded.id);
         if (!user) {
             return res.status(404).json({ error: 'Usuário não encontrado' });
