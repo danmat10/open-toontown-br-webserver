@@ -4,8 +4,8 @@ class BaseModel {
         this.collection = collection;
     }
     
-    async findOne(query) {
-        return this.db.findOne(this.collection, query);
+    async findOne(query, projection = {}, options = {}) {
+        return this.db.findOne(this.collection, query, projection, options);
     }
     
     async findById(id) {
