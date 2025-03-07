@@ -24,8 +24,8 @@ class AstronController extends BaseController {
         if (!astronAccount) {
             throw new Error('AstronAccount não encontrado');
         }
-
-        this.sendResponse(res, { _id: astronAccount._id });
+        const id = astronAccount._id || astronAccount.id;
+        this.sendResponse(res, { _id: id });
     });
 }
 

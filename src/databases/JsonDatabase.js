@@ -129,7 +129,7 @@ class JsonDatabase extends require('./IDatabase') {
                 }
             });
         }
-        return actual === expected;
+        return actual == expected;
     }
     
     _getNestedValue(obj, path) {
