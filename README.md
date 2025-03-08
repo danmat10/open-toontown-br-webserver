@@ -44,3 +44,14 @@ Para iniciar o servidor em modo, execute:
 
 ```sh
 npm start
+```
+
+### Rotas
+
+1. Astron Routes
+GET /account: Obtém informações da conta Astron.
+
+2. Auth Routes
+POST /login: Faz login de um usuário.
+POST /validate-token: Valida um token de autenticação.
+POST /signup: Registra um novo usuário.
